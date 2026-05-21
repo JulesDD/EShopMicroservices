@@ -1,7 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-using Catalog.API.Models;
-
-namespace Catalog.API.Products.CreateProduct;
+﻿namespace Catalog.API.Products.CreateProduct;
 
 public record CreateProductCommand(
     string Name,
@@ -13,7 +10,7 @@ public record CreateProductCommand(
 
 public record CreateProductResult(Guid Id);
 
-internal class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductResult>
+internal class CreateProductCommandHandler(IDocumentSession session) : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
     {
@@ -27,9 +24,10 @@ internal class CreateProductCommandHandler : ICommandHandler<CreateProductComman
             Price = command.Price
         };
 
-        // TODO: Simulate saving the product to a database and generating an ID
+        // Store the new product in the database using Marten
+        session.Store(product);
+        await session.SaveChangesAsync(cancellationToken);
 
-        // return the result with the generated ID
-        return new CreateProductResult(Guid.NewGuid());
+        return new CreateProductResult(product.Id);
     }
 }
