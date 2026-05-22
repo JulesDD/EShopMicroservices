@@ -9,7 +9,7 @@
 #  Vertical Slice Architecture implementation with Feature folders (complete)
 #  CQRS implementation using MediatR library (complete)
 #  Mapping using Mapster instead of AutoMapper (a challenge but complete)
-#  CQRS Validation Pipeline Behaviours with MediatR and FluentValidation (complete)
+#  CQRS Validation Pipeline Behaviours with MediatR and FluentValidation 
 #  Marten library for .NET Transactional Document DB on PostgreSQL (complete)
 #  Carter library for Minimal API endpoint definition (complete)
 #  Cross-cutting concerns Logging, global Exception Handling and Health Checks 
