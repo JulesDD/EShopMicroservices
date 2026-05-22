@@ -1,7 +1,5 @@
 ﻿namespace Catalog.API.Products.GetProducts;
 
-//public record GetProductsRequest();
-
 // This record can be used to define the response model for the get products endpoint, such as a list of products.
 public record GetProductsResponse(IEnumerable<Product> Products);
 public class GetProductsEndpoint : ICarterModule
