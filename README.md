@@ -1,6 +1,6 @@
 #This project literally started because I was reading about Minimal API development. After which I sat for a weekend doing research and I am working developing a microservice with different methods and procedures.
-#Remembering what I learned from my previous job. I took a weekend to gather information to build Microservices on .Net platforms which used Asp.Net Web API, Docker, RabbitMQ, MassTransit, Grpc, Yarp API Gateway, PostgreSQL, 
-#Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Vertical and Clean Architecture implementation using latest codes and best practices of .NET 8 on cloud-native environments.
+Remembering what I learned from my previous job. I took a weekend to gather information to build Microservices on .Net platforms which used Asp.Net Web API, Docker, RabbitMQ, MassTransit, Grpc, Yarp API Gateway, PostgreSQL, 
+Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Vertical and Clean Architecture implementation using latest codes and best practices of .NET 8 on cloud-native environments.
 
 
 # WEEK 1
