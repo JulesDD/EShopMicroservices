@@ -14,3 +14,5 @@
 #  Carter library for Minimal API endpoint definition (complete)
 #  Cross-cutting concerns Logging, global Exception Handling and Health Checks 
 #  Dockerfile and docker-compose file for running Multi-container in Docker environment 
+
+#Reminder: Replace PUT request with a PATCH. Personally never a fan of PUT. 
