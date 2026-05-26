@@ -18,7 +18,6 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
         RuleFor(x => x.Categories).NotEmpty().WithMessage("Catory field is required");
         RuleFor(x => x.ImageFile).NotEmpty().WithMessage("An Image file is required");
         RuleFor(x => x.Price).NotEmpty().WithMessage("Please insert a price greater than 0");
-
     }
 }
 

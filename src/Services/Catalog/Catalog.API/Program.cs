@@ -1,5 +1,3 @@
-using Weasel.Core;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMediatR(config =>
@@ -17,6 +15,10 @@ builder.Services.AddMarten(opts =>
     opts.Connection(builder.Configuration.GetConnectionString("Database")!);
     opts.AutoCreateSchemaObjects = AutoCreate.All;
 }).UseLightweightSessions();
+
+if (builder.Environment.IsDevelopment())
+    builder.Services.InitializeMartenWith<InitializeCatalogData>();
+
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
