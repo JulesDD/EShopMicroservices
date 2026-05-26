@@ -1,4 +1,6 @@
-﻿namespace Catalog.API.Products.UpdateProduct;
+﻿using Catalog.API.Products.CreateProduct;
+
+namespace Catalog.API.Products.UpdateProduct;
 
 public record UpdateProductCommand(
     Guid Id, 
@@ -10,6 +12,19 @@ public record UpdateProductCommand(
     : ICommand<UpdateProductResult>;
 
 public record UpdateProductResult(bool IsSuccess);
+
+public class UpdateProductCommandValidator : AbstractValidator<UpdateProductCommand>
+{
+    public UpdateProductCommandValidator()
+    {
+        RuleFor(x => x.Id).NotEmpty().WithMessage("An Id must be provided");
+        RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
+        RuleFor(x => x.Categories).NotEmpty().WithMessage("Catory field is required");
+        RuleFor(x => x.ImageFile).NotEmpty().WithMessage("An Image file is required");
+        RuleFor(x => x.Price).GreaterThan(0).WithMessage("Please insert a price greater than 0");
+
+    }
+}
 internal class UpdateProductCommandHandler(IDocumentSession session, ILogger<UpdateProductCommandHandler> logger) 
     : ICommandHandler<UpdateProductCommand, UpdateProductResult>
 {

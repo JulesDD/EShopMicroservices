@@ -10,10 +10,24 @@ public record CreateProductCommand(
 
 public record CreateProductResult(Guid Id);
 
-internal class CreateProductCommandHandler(IDocumentSession session) : ICommandHandler<CreateProductCommand, CreateProductResult>
+public class CreateProductCommandValidator : AbstractValidator<CreateProductCommand>
+{
+    public CreateProductCommandValidator()
+    {
+        RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
+        RuleFor(x => x.Categories).NotEmpty().WithMessage("Catory field is required");
+        RuleFor(x => x.ImageFile).NotEmpty().WithMessage("An Image file is required");
+        RuleFor(x => x.Price).NotEmpty().WithMessage("Please insert a price greater than 0");
+
+    }
+}
+
+internal class CreateProductCommandHandler(IDocumentSession session, ILogger<CreateProductCommandHandler> logger) : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
     {
+        logger.LogInformation("Handling CreateProductCommandHandler called with {@command}", command);
+
         // Implement the logic to create a new product and return the result
         var product = new Product
         {
