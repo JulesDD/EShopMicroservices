@@ -13,10 +13,6 @@ internal class GetProductByCategoryQueryHandler(IDocumentSession session, ILogge
         var products = await session.Query<Product>()
             .Where(p => p.Categories.Contains(query.Category))
             .ToListAsync(cancellationToken);
-        if (products is null)
-        {
-            throw new ProductNotFoundException();
-        }
        
         return new GetProductByCategoryResult(products);
     }
