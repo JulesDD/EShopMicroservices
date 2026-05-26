@@ -11,3 +11,4 @@ global using BuildingBlocks.Exceptions.Handler;
 global using Marten.Schema;
 global using Catalog.API.Data;
 global using Weasel.Core;
+global using Marten.Pagination;

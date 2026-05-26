@@ -80,6 +80,6 @@ public class InitializeCatalogData : IInitialData
             Price = 600,
             Categories = new List<string> { "Home Appliance" }
         }
-};
+    };
 
 }
