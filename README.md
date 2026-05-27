@@ -3,17 +3,27 @@ Remembering what I learned from my previous job. I took a weekend to gather info
 Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Vertical and Clean Architecture implementation using latest codes and best practices of .NET 8 on cloud-native environments.
 
 
-# WEEK 1
+# WEEK 1 (Completed)
 # Catalog microservice will include:
-- ASP.NET Core Minimal APIs and latest features of .NET 8 and C# 12 (complete)
-- Vertical Slice Architecture implementation with Feature folders (complete)
-- CQRS implementation using MediatR library (complete)
-- Mapping using Mapster instead of AutoMapper (a challenge but complete)
-- CQRS Validation Pipeline Behaviours with MediatR and FluentValidation (pending)
-- Marten library for .NET Transactional Document DB on PostgreSQL (complete)
-- Carter library for Minimal API endpoint definition (complete)
-- Cross-cutting concerns Logging, global Exception Handling and Health Checks (pending)
+- ASP.NET Core Minimal APIs and latest features of .NET 8 and C# 12 
+- Vertical Slice Architecture implementation with Feature folders 
+- CQRS implementation using MediatR library 
+- Mapping using Mapster instead of AutoMapper 
+- CQRS Validation Pipeline Behaviours with MediatR and FluentValidation 
+- Marten library for .NET Transactional Document DB on PostgreSQL
+- Carter library for Minimal API endpoint definition 
+- Cross-cutting concerns Logging, global Exception Handling and Health Checks 
 - Dockerfile and docker-compose file for running Multi-container in Docker environment (pending) 
 
 ## Reminder: 
-- Replace PUT request with a PATCH. Personally never a fan of PUT. 
+- Replace PUT request with a PATCH. Personally never a fan of PUT.
+- Update Containerizing in a Docker environment
+
+# Week 2
+# Basket microservice will include:
+- ASP.NET 8 Web API application, Following REST API principles, CRUD operations
+- Redis as a Distributed Cache over basketdb
+- Implements Proxy, Decorator and Cache-aside Design Patterns
+- Consume Discount gRPC Service for inter-service sync communication to calculate product final price
+- Publish BasketCheckout Queue with using MassTransit and RabbitMQ
+
