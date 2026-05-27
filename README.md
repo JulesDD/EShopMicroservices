@@ -15,10 +15,6 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - Cross-cutting concerns Logging, global Exception Handling and Health Checks 
 - Dockerfile and docker-compose file for running Multi-container in Docker environment (pending) 
 
-## Reminder: 
-- Replace PUT request with a PATCH. Personally never a fan of PUT.
-- Update Containerizing in a Docker environment
-
 # Week 2
 # Basket microservice will include:
 - ASP.NET 8 Web API application, Following REST API principles, CRUD operations
@@ -27,3 +23,5 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - Consume Discount gRPC Service for inter-service sync communication to calculate product final price
 - Publish BasketCheckout Queue with using MassTransit and RabbitMQ
 
+## Reminder: 
+- Replace PUT request with a PATCH. Personally never a fan of PUT.
