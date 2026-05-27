@@ -1,3 +1,5 @@
+using BuildingBlocks.Exceptions.Handler;
+
 var builder = WebApplication.CreateBuilder(args);
 var assembly = typeof(Program).Assembly;
 var validate = typeof(ValidationBehaviours<,>);
@@ -18,7 +20,13 @@ builder.Services.AddMediatR(config =>
     config.AddOpenBehavior(logging);
 });
 
-var app = builder.Build();
+builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
+var app = builder.Build();
+app.UseExceptionHandler(opt =>
+{
+
+});
 app.MapCarter();
 app.Run();
