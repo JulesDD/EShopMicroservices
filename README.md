@@ -18,3 +18,12 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 ## Reminder: 
 - Replace PUT request with a PATCH. Personally never a fan of PUT.
 - Update Containerizing in a Docker environment
+
+# Week 2
+# Basket microservice will include:
+- ASP.NET 8 Web API application, Following REST API principles, CRUD operations
+- Redis as a Distributed Cache over basketdb
+- Implements Proxy, Decorator and Cache-aside Design Patterns
+- Consume Discount gRPC Service for inter-service sync communication to calculate product final price
+- Publish BasketCheckout Queue with using MassTransit and RabbitMQ
+
