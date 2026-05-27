@@ -1,6 +1,4 @@
-﻿using Catalog.API.Products.CreateProduct;
-
-namespace Catalog.API.Products.DeleteProduct;
+﻿namespace Catalog.API.Products.DeleteProduct;
 
 public record DeleteProductCommand(Guid Id) : ICommand<DeleteProductResult>;
 
@@ -14,7 +12,7 @@ public class DeleteProductCommandValidator : AbstractValidator<DeleteProductComm
     }
 }
 
-internal class DeleteProductComandHandler(IDocumentSession session) : ICommandHandler<DeleteProductCommand, DeleteProductResult>
+public class DeleteProductComandHandler(IDocumentSession session) : ICommandHandler<DeleteProductCommand, DeleteProductResult>
 {
     public async Task<DeleteProductResult> Handle(DeleteProductCommand command, CancellationToken cancellationToken)
     {
