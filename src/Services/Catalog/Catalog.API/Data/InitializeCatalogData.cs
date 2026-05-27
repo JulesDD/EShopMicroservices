@@ -19,7 +19,7 @@ public class InitializeCatalogData : IInitialData
     {
         new Product()
         {
-            Id = new Guid("5334c996-8457-4cf0-815c-ed2b77c4ff61"),
+            Id = new Guid("4c382c7a-a372-48db-aaea-07349cc2d1dd"),
             Name = "IPhone 16 Plus",
             Description = "This phone is the company's biggest change to its flagship smartphone in years. It includes a borderless.",
             ImageFile = "product-1.png",
@@ -28,7 +28,7 @@ public class InitializeCatalogData : IInitialData
         },
         new Product()
         {
-            Id = new Guid("c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914"),
+            Id = new Guid("6a2bae7a-459a-4fa9-86d2-5b39029882db"),
             Name = "M5 Macbook Pro",
             Description = "It's a macbook pro. Djs love this product",
             ImageFile = "product-2.png",
@@ -64,7 +64,7 @@ public class InitializeCatalogData : IInitialData
         },
         new Product()
         {
-            Id = new Guid("93170c85-7795-489c-8e8f-7dcf3b4f4188"),
+            Id = new Guid("b2a11396-14af-447f-a50d-d2b329753745"),
             Name = "Sony Playstation 5",
             Description = "Your kids or boyfriend will love you. Your bank account wouldn't",
             ImageFile = "product-6.png",
@@ -73,7 +73,7 @@ public class InitializeCatalogData : IInitialData
         },
         new Product()
         {
-            Id = new Guid("93170c85-7795-489c-8e8f-7dcffwe532tw"),
+            Id = new Guid("414f6b1c-71b9-4034-bb0f-eacc719f6ccc"),
             Name = "X-Box Series S",
             Description = "No one will love you for buying this.",
             ImageFile = "product-7.png",
