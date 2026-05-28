@@ -29,11 +29,10 @@ builder.Services.AddStackExchangeRedisCache(opt =>
 });
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
-app.UseExceptionHandler(opt =>
-{
-
-});
+app.UseExceptionHandler(opt => { });
+app.UseHealthChecks("/health");
 app.MapCarter();
 app.Run();
