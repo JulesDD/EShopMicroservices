@@ -1,4 +1,4 @@
-using BuildingBlocks.Exceptions.Handler;
+
 
 var builder = WebApplication.CreateBuilder(args);
 var assembly = typeof(Program).Assembly;
@@ -29,10 +29,16 @@ builder.Services.AddStackExchangeRedisCache(opt =>
 });
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
-builder.Services.AddHealthChecks();
+builder.Services.AddHealthChecks()
+    .AddNpgSql(builder.Configuration.GetConnectionString("Database")!)
+    .AddRedis(builder.Configuration.GetConnectionString("Redis")!);
 
 var app = builder.Build();
 app.UseExceptionHandler(opt => { });
-app.UseHealthChecks("/health");
+app.UseHealthChecks("/health",
+    new HealthCheckOptions
+    {
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse        
+    });
 app.MapCarter();
 app.Run();
