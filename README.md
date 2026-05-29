@@ -23,6 +23,15 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - Consume Discount gRPC Service for inter-service sync communication to calculate product final price
 - Publish BasketCheckout Queue with using MassTransit and RabbitMQ
 
+# Week 3
+# Discount microservice which includes:
+-  ASP.NET gRPC Server application
+- Build a Highly Performant inter-service gRPC Communication with Basket Microservice
+- Exposing gRPC Services with creating Protobuf messages
+-  Entity Framework Core ORM - SQLite Data Provider and Migrations
+- SQLite database connection and containerization
+
 ## Reminder: 
 - Replace PUT request with a PATCH. Personally never a fan of PUT.
+- Take sometime to properly apply gRPC
 - Read more about RabbitMQ before applying it
