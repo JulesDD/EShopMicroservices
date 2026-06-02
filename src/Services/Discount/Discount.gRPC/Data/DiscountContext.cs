@@ -1,7 +1,4 @@
-﻿using Discount.gRPC.Models;
-using Microsoft.EntityFrameworkCore;
-
-namespace Discount.gRPC.Data;
+﻿namespace Discount.gRPC.Data;
 
 
 public class DiscountContext : DbContext 
