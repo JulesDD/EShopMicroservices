@@ -1,6 +1,5 @@
 ﻿namespace Discount.gRPC.Data;
 
-
 public class DiscountContext : DbContext 
 {
     public DiscountContext(DbContextOptions<DiscountContext> options) : base(options)

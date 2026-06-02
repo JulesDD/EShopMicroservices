@@ -13,15 +13,15 @@ service DiscountProtoService {
   rpc DeleteDiscount (DeleteDiscountRequest) returns (DeleteDiscountResponse);
 }
 
-message GetDiscountRequest {
-  string productName = 1; // The name of the product for which to get the discount.
-}
-
 message CouponModel {
   int32 id = 1; // The unique identifier of the coupon.
   string productName = 2; // The name of the product associated with the coupon.
   string description = 3; // A description of the coupon.
   int32 amount = 4; // The discount amount for the coupon.
+}
+
+message GetDiscountRequest {
+  string productName = 1; // The name of the product for which to get the discount.
 }
 
 message CreateDiscountRequest {

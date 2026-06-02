@@ -3,3 +3,4 @@ global using Discount.gRPC.Models;
 global using Microsoft.EntityFrameworkCore;
 global using Grpc.Core;
 global using Mapster;
+global using Discount.gRPC.Services;
