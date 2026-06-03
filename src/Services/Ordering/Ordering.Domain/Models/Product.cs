@@ -1,4 +1,4 @@
-﻿namespace Ordering.Domain.Enums.Models;
+﻿namespace Ordering.Domain.Models;
 
 // This class represents a product in the ordering domain.
 // It includes properties for the product's name and price, and a factory method to create new instances of the product with validation.
