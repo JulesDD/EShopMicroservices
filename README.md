@@ -41,8 +41,3 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - Consuming RabbitMQ BasketCheckout event queue with using MassTransit-RabbitMQ Configuration
 - SqlServer database connection and containerization
 - Using Entity Framework Core ORM and auto migrate to SqlServer when application startup
-
-## Reminder: 
-- Replace PUT request with a PATCH. Personally never a fan of PUT.
-- Take sometime to properly apply gRPC
-- Read more about RabbitMQ before applying it
