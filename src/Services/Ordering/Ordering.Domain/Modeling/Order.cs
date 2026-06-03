@@ -1,7 +1,4 @@
-﻿using Ordering.Domain.Abstractions;
-using System.Diagnostics.Contracts;
-
-namespace Ordering.Domain.Modeling;
+﻿namespace Ordering.Domain.Modeling;
 
 // Aggregate root representing an order in the system
 public class Order: Aggregate<Guid>

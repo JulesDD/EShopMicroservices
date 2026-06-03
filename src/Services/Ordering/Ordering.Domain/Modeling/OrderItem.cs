@@ -1,6 +1,4 @@
-﻿using Ordering.Domain.Abstractions;
-
-namespace Ordering.Domain.Modeling;
+﻿namespace Ordering.Domain.Modeling;
 
 public class OrderItem : Entity<Guid>
 {
