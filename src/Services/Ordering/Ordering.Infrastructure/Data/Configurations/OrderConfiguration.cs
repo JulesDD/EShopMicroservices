@@ -55,8 +55,8 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
                addressBuilder.Property(a => a.Province)
                    .HasMaxLength(50);
 
-               addressBuilder.Property(a => a.ZipCode)
-                   .HasMaxLength(5)
+               addressBuilder.Property(a => a.PostalCode)
+                   .HasMaxLength(6)
                    .IsRequired();
            });
 
@@ -84,8 +84,8 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
               addressBuilder.Property(a => a.Province)
                   .HasMaxLength(50);
 
-              addressBuilder.Property(a => a.ZipCode)
-                  .HasMaxLength(5)
+              addressBuilder.Property(a => a.PostalCode)
+                  .HasMaxLength(6)
                   .IsRequired();
           });
 

@@ -10,7 +10,10 @@ public static class DependencyInjection
         // Here you would typically register your infrastructure services, such as database contexts, repositories, etc.
         // For example:
         services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(connectionString));
+        {
+            options.UseSqlServer(connectionString);
+            options.AddInterceptors(new AuditableEntityInterceptor());
+        });            
 
         return services;
     }

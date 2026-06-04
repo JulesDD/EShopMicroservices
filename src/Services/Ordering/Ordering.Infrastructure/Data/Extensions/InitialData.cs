@@ -29,31 +29,31 @@ internal class InitialData
     {
         get
         {
-            var address1 = Address.Of("Jane", "Smith", "jane.smith@example.com", "1600 Pennsylvania Avenue NW, Washington", "United States", "District of Columbia", "20500");
-            var address2 = Address.Of("John", "Doe", "john.doe@example.com", "10 Downing Street", "England", "Westminster", "SW1A 2AA");
+            var address1 = Address.Of("Jane", "Smith", "jane.smith@example.com", "1600 Pennsylvania Avenue NW, Washington", "United States", "District of Columbia", "205001");
+            var address2 = Address.Of("John", "Doe", "john.doe@example.com", "10 Downing Street", "England", "Westminster", "SW1A2AA");
 
             var payment1 = Payment.Of("Jane", "5555555555554444", "12/28", "355", 1);
             var payment2 = Payment.Of("John", "8885555555554444", "06/30", "222", 2);
 
             var order1 = Order.Create(
                             OrderId.Of(Guid.NewGuid()),
-                            CustomerId.Of(new Guid("60ce2af2-5bec-4b52-8fd0-fc08c8ca12dc")),
+                            CustomerId.Of(new Guid("471ef931-9fe7-41af-b120-b9ab08b4b324")),
                             OrderName.Of("ORD_1"),
                             shippingAddress: address1,
                             billingAddress: address1,
                             payment1);
-            order1.Add(ProductId.Of(new Guid("68d63e25-528a-495b-bbf4-9fc240430e9a")), 2, 500);
-            order1.Add(ProductId.Of(new Guid("8611f3c9-7ba9-462b-86c5-24669c90f59c")), 1, 400);
+            order1.Add(ProductId.Of(new Guid("123e4567-e89b-12d3-a456-426614174000")), 2, 999.99m);
+            order1.Add(ProductId.Of(new Guid("123e4567-e89b-12d3-a456-426614174001")), 1, 499.99m);
 
             var order2 = Order.Create(
                             OrderId.Of(Guid.NewGuid()),
-                            CustomerId.Of(new Guid("d178f690-ce2b-4b51-b0d1-5545fa5aaeda")),
+                            CustomerId.Of(new Guid("5a1c2e3f-4b6d-4c8e-9f1a-2b3c4d5e6f78")),
                             OrderName.Of("ORD_2"),
                             shippingAddress: address2,
                             billingAddress: address2,
                             payment2);
-            order2.Add(ProductId.Of(new Guid("f9bfa808-f31a-46cc-bad4-59050e42a327")), 1, 650);
-            order2.Add(ProductId.Of(new Guid("83225111-d12f-4ea5-bf07-cd504f1a5f31")), 2, 450);
+            order2.Add(ProductId.Of(new Guid("123e4567-e89b-12d3-a456-426614174002")), 1, 799.99m);
+            order2.Add(ProductId.Of(new Guid("123e4567-e89b-12d3-a456-426614174003")), 2, 2799.99m);
 
             return new List<Order> { order1, order2 };
         }
