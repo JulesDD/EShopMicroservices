@@ -20,7 +20,7 @@ public class Address
     {
         FirstName = firstName;
         LastName = lastName;
-        EmaiAddress = emailAddress;
+        EmailAddress = emailAddress;
         AddressLine = addressLine;
         Country = country;
         Province = province;
