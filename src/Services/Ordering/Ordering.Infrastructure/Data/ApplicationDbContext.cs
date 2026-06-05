@@ -1,9 +1,11 @@
-﻿namespace Ordering.Infrastructure.Data;
+﻿using Ordering.Application.Data;
+
+namespace Ordering.Infrastructure.Data;
 
 // This class represents the Entity Framework Core database context for the Ordering service.
 // It inherits from DbContext and is configured to use dependency injection for its options.
 // The OnModelCreating method is overridden to allow for further configuration of the model, but currently it just calls the base implementation.
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     // The constructor takes DbContextOptions and passes them to the base class constructor
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
