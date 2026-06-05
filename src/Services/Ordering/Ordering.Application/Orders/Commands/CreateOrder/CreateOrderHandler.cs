@@ -2,6 +2,7 @@
 
 public class CreateOrderHandler(IApplicationDbContext dbContext) : ICommandHandler<CreateOrderCommand, CreateOrderResult>
 {
+    // This will create an Order Entity from the createOrderCommand object. Save changes to database and return a newOrder Id
     public async Task<CreateOrderResult> Handle(CreateOrderCommand command, CancellationToken cancellationToken)
     {
         var order = CreateNewOrder(command.OrderDto);

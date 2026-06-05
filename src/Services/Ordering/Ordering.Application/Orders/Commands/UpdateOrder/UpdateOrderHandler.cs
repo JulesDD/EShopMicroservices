@@ -4,22 +4,53 @@ internal class UpdateOrderHandler(IApplicationDbContext dbContext) : ICommandHan
 {
     public async Task<UpdateOrderResult> Handle(UpdateOrderCommand command, CancellationToken cancellationToken)
     {
-        //var orderId = OrderId.Of(command.OrderDto.Id);
-        //var order = dbContext.Orders.FindAsync([orderId], cancellationToken: cancellationToken);
+        var orderId = OrderId.Of(command.OrderDto.Id);
+        var order = await dbContext.Orders.FindAsync([orderId], cancellationToken: cancellationToken);
 
-        //if (order is null) throw new OrderNotFoundException(command.OrderDto.Id);
+        if (order is null) throw new OrderNotFoundException(command.OrderDto.Id);
 
-        //UpdateOrderWithNewValues(order, command.OrderDto);
+        UpdateOrderWithNewValues(order, command.OrderDto);
 
-        //dbContext.Orders.Update(order);
-        //await dbContext.SaveChangesAsync(cancellationToken);
+        dbContext.Orders.Update(order);
+        await dbContext.SaveChangesAsync(cancellationToken);
 
         return new UpdateOrderResult(true);
 
     }
 
-    private void UpdateOrderWithNewValues(ValueTask<Order?> order, OrderDto orderDto)
+    private void UpdateOrderWithNewValues(Order order, OrderDto orderDto)
     {
-        throw new NotImplementedException();
+        var updatedShippingAddress = Address.Of(
+            orderDto.ShippingAddress.FirstName,
+            orderDto.ShippingAddress.LastName,
+            orderDto.ShippingAddress.EmailAddress,
+            orderDto.ShippingAddress.AddressLine,
+            orderDto.ShippingAddress.Country,
+            orderDto.ShippingAddress.Province,
+            orderDto.ShippingAddress.PostalCode);
+
+        var updatedBillingAddress = Address.Of(
+            orderDto.BillingAddress.FirstName,
+            orderDto.BillingAddress.LastName,
+            orderDto.BillingAddress.EmailAddress,
+            orderDto.BillingAddress.AddressLine,
+            orderDto.BillingAddress.Country,
+            orderDto.BillingAddress.Province,
+            orderDto.BillingAddress.PostalCode);
+
+        var updatedPayment = Payment.Of(
+            orderDto.Payment.CardName,
+            orderDto.Payment.CardNumber,
+            orderDto.Payment.Cvv,
+            orderDto.Payment.Expiration,
+            orderDto.Payment.PaymentMethod);
+
+        order.Update(
+            orderName: OrderName.Of(orderDto.OrderName),
+            shippingAddress: updatedShippingAddress,
+            billingAddress: updatedBillingAddress,
+            payment: updatedPayment,
+            status: orderDto.Status);
     }
+    
 }
