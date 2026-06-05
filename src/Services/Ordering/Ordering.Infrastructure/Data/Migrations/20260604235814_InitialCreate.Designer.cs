@@ -13,7 +13,7 @@ using Ordering.Infrastructure.Data;
 namespace Ordering.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260603235836_InitialCreate")]
+    [Migration("20260604235814_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -118,15 +118,15 @@ namespace Ordering.Infrastructure.Data.Migrations
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");
 
+                            b1.Property<string>("PostalCode")
+                                .IsRequired()
+                                .HasMaxLength(6)
+                                .HasColumnType("nvarchar(6)");
+
                             b1.Property<string>("Province")
                                 .IsRequired()
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");
-
-                            b1.Property<string>("ZipCode")
-                                .IsRequired()
-                                .HasMaxLength(5)
-                                .HasColumnType("nvarchar(5)");
                         });
 
                     b.ComplexProperty<Dictionary<string, object>>("OrderName", "Ordering.Domain.Models.Order.OrderName#OrderName", b1 =>
@@ -195,15 +195,15 @@ namespace Ordering.Infrastructure.Data.Migrations
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");
 
+                            b1.Property<string>("PostalCode")
+                                .IsRequired()
+                                .HasMaxLength(6)
+                                .HasColumnType("nvarchar(6)");
+
                             b1.Property<string>("Province")
                                 .IsRequired()
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)");
-
-                            b1.Property<string>("ZipCode")
-                                .IsRequired()
-                                .HasMaxLength(5)
-                                .HasColumnType("nvarchar(5)");
                         });
 
                     b.HasKey("Id");

@@ -117,8 +117,8 @@ namespace Ordering.Infrastructure.Data.Migrations
 
                             b1.Property<string>("PostalCode")
                                 .IsRequired()
-                                .HasMaxLength(6)
-                                .HasColumnType("nvarchar(6)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("Province")
                                 .IsRequired()
@@ -194,8 +194,8 @@ namespace Ordering.Infrastructure.Data.Migrations
 
                             b1.Property<string>("PostalCode")
                                 .IsRequired()
-                                .HasMaxLength(5)
-                                .HasColumnType("nvarchar(5)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("Province")
                                 .IsRequired()

@@ -7,12 +7,15 @@ public static class DependencyInjection
     {
         var connectionString = configuration.GetConnectionString("Database");
 
+        services.AddScoped<ISaveChangesInterceptor, AuditableEntityInterceptor>();
+        services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
+
         // Here you would typically register your infrastructure services, such as database contexts, repositories, etc.
         // For example:
-        services.AddDbContext<ApplicationDbContext>(options =>
+        services.AddDbContext<ApplicationDbContext>((sp, options) =>
         {
             options.UseSqlServer(connectionString);
-            options.AddInterceptors(new AuditableEntityInterceptor());
+            options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
         });            
 
         return services;

@@ -13,8 +13,8 @@ using Ordering.Infrastructure.Data;
 namespace Ordering.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260604200023_PostalCodes")]
-    partial class PostalCodes
+    [Migration("20260605001853_UpdatedPostalCodeLength")]
+    partial class UpdatedPostalCodeLength
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -120,8 +120,8 @@ namespace Ordering.Infrastructure.Data.Migrations
 
                             b1.Property<string>("PostalCode")
                                 .IsRequired()
-                                .HasMaxLength(6)
-                                .HasColumnType("nvarchar(6)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("Province")
                                 .IsRequired()
@@ -197,8 +197,8 @@ namespace Ordering.Infrastructure.Data.Migrations
 
                             b1.Property<string>("PostalCode")
                                 .IsRequired()
-                                .HasMaxLength(5)
-                                .HasColumnType("nvarchar(5)");
+                                .HasMaxLength(10)
+                                .HasColumnType("nvarchar(10)");
 
                             b1.Property<string>("Province")
                                 .IsRequired()
