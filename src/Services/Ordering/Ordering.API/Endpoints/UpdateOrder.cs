@@ -14,10 +14,10 @@ public class UpdateOrder : ICarterModule
             var response = result.Adapt<UpdateOrderResponse>();
             return Results.Ok(response);
         })
-            .WithName("UpdateOrder")
-            .Produces<CreateOrderResponse>(StatusCodes.Status200OK)
-            .ProducesProblem(StatusCodes.Status400BadRequest)
-            .WithSummary("Update Order")
-            .WithDescription("Order Updated");
+        .WithName("UpdateOrder")
+        .Produces<CreateOrderResponse>(StatusCodes.Status200OK)
+        .ProducesProblem(StatusCodes.Status400BadRequest)
+        .WithSummary("Update Order")
+        .WithDescription("Order Updated");
     }
 }

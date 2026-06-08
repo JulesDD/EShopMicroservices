@@ -14,11 +14,11 @@ public class GetOrdersByName : ICarterModule
             var response = result.Adapt<GetOrdersByNameResponse>();
             return Results.Ok(response);
         })
-          .WithName("GetOrdersByName")
-            .Produces<GetOrdersByNameResponse>(StatusCodes.Status200OK)
-            .ProducesProblem(StatusCodes.Status400BadRequest)
-            .ProducesProblem(StatusCodes.Status404NotFound)
-            .WithSummary("Get Orders By Name")
-            .WithDescription("Get Orders By Name");
+        .WithName("GetOrdersByName")
+        .Produces<GetOrdersByNameResponse>(StatusCodes.Status200OK)
+        .ProducesProblem(StatusCodes.Status400BadRequest)
+        .ProducesProblem(StatusCodes.Status404NotFound)
+        .WithSummary("Get Orders By Name")
+        .WithDescription("Get Orders By Name");
     }
 }

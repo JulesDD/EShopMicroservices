@@ -13,12 +13,11 @@ public class DeleteOrder : ICarterModule
             var response = result.Adapt<DeleteOrderResponse>();
             return Results.Ok(response);
         })
-            .WithName("DeleteOrder")
-            .Produces<DeleteOrderResponse>(StatusCodes.Status200OK)
-            .ProducesProblem(StatusCodes.Status400BadRequest)
-            .ProducesProblem(StatusCodes.Status404NotFound)
-            .WithSummary("Delete Order")
-            .WithDescription("Order Deleted");
-
+        .WithName("DeleteOrder")
+        .Produces<DeleteOrderResponse>(StatusCodes.Status200OK)
+        .ProducesProblem(StatusCodes.Status400BadRequest)
+        .ProducesProblem(StatusCodes.Status404NotFound)
+        .WithSummary("Delete Order")
+        .WithDescription("Order Deleted");
     }
 }

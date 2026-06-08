@@ -1,7 +1,4 @@
-﻿using BuildingBlocks.Pagination;
-using Ordering.Application.Orders.Queries.GetOrders;
-
-namespace Ordering.API.Endpoints;
+﻿namespace Ordering.API.Endpoints;
 
 public record GetOrderResponse(PaginationResult<OrderDto> Orders);
 public class GetOrder : ICarterModule
@@ -14,11 +11,11 @@ public class GetOrder : ICarterModule
             var response = result.Adapt<GetOrderResponse>();
             return Results.Ok(response);
         })
-            .WithName("GetOrder")
-            .Produces<GetOrderResponse>(StatusCodes.Status200OK)
-            .ProducesProblem(StatusCodes.Status400BadRequest)
-            .ProducesProblem(StatusCodes.Status404NotFound)
-            .WithSummary("Get Orders")
-            .WithDescription("Get Orders");
+        .WithName("GetOrder")
+        .Produces<GetOrderResponse>(StatusCodes.Status200OK)
+        .ProducesProblem(StatusCodes.Status400BadRequest)
+        .ProducesProblem(StatusCodes.Status404NotFound)
+        .WithSummary("Get Orders")
+        .WithDescription("Get Orders");
     }
 }
