@@ -5,7 +5,7 @@ public class CreateOrderHandler(IApplicationDbContext dbContext) : ICommandHandl
     // This will create an Order Entity from the createOrderCommand object. Save changes to database and return a newOrder Id
     public async Task<CreateOrderResult> Handle(CreateOrderCommand command, CancellationToken cancellationToken)
     {
-        var order = CreateNewOrder(command.OrderDto);
+        var order = CreateNewOrder(command.Order);
 
         dbContext.Orders.Add(order);
         await dbContext.SaveChangesAsync(cancellationToken);
@@ -15,6 +15,18 @@ public class CreateOrderHandler(IApplicationDbContext dbContext) : ICommandHandl
 
     private Order CreateNewOrder(OrderDto orderDto)
     {
+        if (orderDto == null)
+            throw new ArgumentNullException(nameof(orderDto));
+
+        if (orderDto.ShippingAddress == null)
+            throw new ArgumentNullException(nameof(orderDto.ShippingAddress));
+
+        if (orderDto.BillingAddress == null)
+            throw new ArgumentNullException(nameof(orderDto.BillingAddress));
+
+        if (orderDto.Payment == null)
+            throw new ArgumentNullException(nameof(orderDto.Payment));
+
         var shippingAddress = Address.Of(
             orderDto.ShippingAddress.FirstName, 
             orderDto.ShippingAddress.LastName,

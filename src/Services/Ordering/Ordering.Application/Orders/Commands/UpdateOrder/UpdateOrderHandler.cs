@@ -4,12 +4,12 @@ internal class UpdateOrderHandler(IApplicationDbContext dbContext) : ICommandHan
 {
     public async Task<UpdateOrderResult> Handle(UpdateOrderCommand command, CancellationToken cancellationToken)
     {
-        var orderId = OrderId.Of(command.OrderDto.Id);
+        var orderId = OrderId.Of(command.Order.Id);
         var order = await dbContext.Orders.FindAsync([orderId], cancellationToken: cancellationToken);
 
-        if (order is null) throw new OrderNotFoundException(command.OrderDto.Id);
+        if (order is null) throw new OrderNotFoundException(command.Order.Id);
 
-        UpdateOrderWithNewValues(order, command.OrderDto);
+        UpdateOrderWithNewValues(order, command.Order);
 
         dbContext.Orders.Update(order);
         await dbContext.SaveChangesAsync(cancellationToken);
@@ -41,8 +41,8 @@ internal class UpdateOrderHandler(IApplicationDbContext dbContext) : ICommandHan
         var updatedPayment = Payment.Of(
             orderDto.Payment.CardName,
             orderDto.Payment.CardNumber,
-            orderDto.Payment.Cvv,
             orderDto.Payment.Expiration,
+            orderDto.Payment.Cvv,
             orderDto.Payment.PaymentMethod);
 
         order.Update(
