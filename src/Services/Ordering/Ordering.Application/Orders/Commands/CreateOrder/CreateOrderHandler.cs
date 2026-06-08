@@ -41,9 +41,9 @@ public class CreateOrderHandler(IApplicationDbContext dbContext) : ICommandHandl
             billingAddress: billingAddress,
             payment: Payment.Of(
                 orderDto.Payment.CardName, 
-                orderDto.Payment.CardNumber, 
+                orderDto.Payment.CardNumber,
+                orderDto.Payment.Expiration,
                 orderDto.Payment.Cvv, 
-                orderDto.Payment.Expiration, 
                 orderDto.Payment.PaymentMethod)
             );
 

@@ -1,7 +1,6 @@
 ﻿namespace Ordering.API.Endpoints;
 
-public record CreateOrderRequest(OrderDto Order);
-
+public record CreateOrderRequest(OrderDto OrderDto);
 public record CreateOrderResponse(Guid Id);
 
 public class CreateOrders : ICarterModule
