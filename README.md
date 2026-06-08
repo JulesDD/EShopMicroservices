@@ -32,7 +32,7 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - SQLite database connection and containerization
 - Have Discount interact with whatever is in Basket (or shopping cart)
 
-# Part 4 
+# Part 4 (Completed)
 # Ordering Microservice will include:
 - Implementing DDD, CQRS, and Clean Architecture with using Best Practices
 - Developing CQRS with using MediatR, FluentValidation and Mapster packages
