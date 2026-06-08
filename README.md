@@ -43,15 +43,13 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - Using Entity Framework Core ORM and auto migrate to SqlServer when application startup
 
 # Part 5
-# Microservices Communication
+# Microservices Communication and Yarp API Gateway Microservice
 - Sync inter-service gRPC Communication
 - Async Microservices Communication with RabbitMQ Message-Broker Service
 - Using RabbitMQ Publish/Subscribe Topic Exchange Model
 - Using MassTransit for abstraction over RabbitMQ Message-Broker system
 - Publishing BasketCheckout event queue from Basket microservices and Subscribing this event from Ordering microservices
-0 Create RabbitMQ EventBus.Messages library and add references Microservices
-
-# Yarp API Gateway Microservice
+- Create RabbitMQ EventBus.Messages library and add references Microservices
 - Implement API Gateways with Yarp Reverse Proxy applying Gateway Routing Pattern
 - Yarp Reverse Proxy Configuration; Route, Cluster, Path, Transform, Destinations
 - Rate Limiting with FixedWindowLimiter on Yarp Reverse Proxy Configuration
