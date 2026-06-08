@@ -3,7 +3,7 @@ Remembering what I learned from my previous job. I took a weekend to gather info
 Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Vertical and Clean Architecture implementation using latest codes and best practices of .NET 8 on cloud-native environments.
 
 
-# WEEK 1 (Completed)
+# Part 1 (Completed)
 # Catalog microservice will include:
 - ASP.NET Core Minimal APIs and latest features of .NET 8 and C# 12 
 - Vertical Slice Architecture implementation with Feature folders 
@@ -15,7 +15,7 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - Cross-cutting concerns Logging, global Exception Handling and Health Checks 
 - Dockerfile and docker-compose file for running Multi-container in Docker environment (pending) 
 
-# Week 2 (Completed)
+# Part 2 (Completed)
 # Basket microservice will include:
 - ASP.NET 8 Web API application, Following REST API principles, CRUD operations
 - Redis as a Distributed Cache over basketdb
@@ -23,7 +23,7 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - Consume Discount gRPC Service for inter-service sync communication to calculate product final price
 - Publish BasketCheckout Queue with using MassTransit and RabbitMQ
 
-# Week 3 (Completed)
+# Part 3 (Completed)
 # Discount microservice which includes:
 -  ASP.NET gRPC Server application
 - Build a Highly Performant inter-service gRPC Communication with Basket Microservice
@@ -32,7 +32,7 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - SQLite database connection and containerization
 - Have Discount interact with whatever is in Basket (or shopping cart)
 
-# Week 4 
+# Part 4 
 # Ordering Microservice will include:
 - Implementing DDD, CQRS, and Clean Architecture with using Best Practices
 - Developing CQRS with using MediatR, FluentValidation and Mapster packages
