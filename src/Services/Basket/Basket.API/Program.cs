@@ -1,5 +1,3 @@
-using Discount.gRPC;
-
 var builder = WebApplication.CreateBuilder(args);
 var assembly = typeof(Program).Assembly;
 var validate = typeof(ValidationBehaviours<,>);
@@ -33,10 +31,15 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
     opt.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
 });
 
+builder.Services.AddMessageBroker(builder.Configuration);
+
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+
 builder.Services.AddHealthChecks()
     .AddNpgSql(builder.Configuration.GetConnectionString("Database")!)
     .AddRedis(builder.Configuration.GetConnectionString("Redis")!);
+
+
 
 var app = builder.Build();
 app.UseExceptionHandler(opt => { });
