@@ -32,7 +32,7 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - SQLite database connection and containerization
 - Have Discount interact with whatever is in Basket (or shopping cart)
 
-# Part 4 
+# Part 4 (Completed)
 # Ordering Microservice will include:
 - Implementing DDD, CQRS, and Clean Architecture with using Best Practices
 - Developing CQRS with using MediatR, FluentValidation and Mapster packages
@@ -41,3 +41,17 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - Consuming RabbitMQ BasketCheckout event queue with using MassTransit-RabbitMQ Configuration
 - SqlServer database connection and containerization
 - Using Entity Framework Core ORM and auto migrate to SqlServer when application startup
+
+# Part 5
+# Microservices Communication and Yarp API Gateway Microservice
+- Sync inter-service gRPC Communication
+- Async Microservices Communication with RabbitMQ Message-Broker Service
+- Using RabbitMQ Publish/Subscribe Topic Exchange Model
+- Using MassTransit for abstraction over RabbitMQ Message-Broker system
+- Publishing BasketCheckout event queue from Basket microservices and Subscribing this event from Ordering microservices
+- Create RabbitMQ EventBus.Messages library and add references Microservices
+- Implement API Gateways with Yarp Reverse Proxy applying Gateway Routing Pattern
+- Yarp Reverse Proxy Configuration; Route, Cluster, Path, Transform, Destinations
+- Rate Limiting with FixedWindowLimiter on Yarp Reverse Proxy Configuration
+- Sample microservices/containers to reroute through the API Gateways
+
