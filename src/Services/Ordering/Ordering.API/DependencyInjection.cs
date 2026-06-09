@@ -12,6 +12,7 @@ public static class DependencyInjection
 
         services.AddCarter();
         services.AddExceptionHandler<CustomExceptionHandler>();
+        services.AddHealthChecks();
         return services;
     }
 
@@ -23,6 +24,7 @@ public static class DependencyInjection
 
         app.MapCarter();
         app.UseExceptionHandler(opt => { });
+        app.UseHealthChecks("/health");
         return app;
     }
 }
