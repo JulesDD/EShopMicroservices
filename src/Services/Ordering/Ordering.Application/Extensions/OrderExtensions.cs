@@ -69,7 +69,11 @@ public static class OrderExtensions
                         order.Payment.CVV, 
                         order.Payment.PaymentMethod),
                     Status: order.Status,
-                    OrderItems: order.OrderItems.Select(oi => new OrderItemDto(oi.OrderId.Value, oi.ProductId.Value, oi.Quantity, oi.Price)).ToList()
+                    OrderItems: order.OrderItems.Select(oi => new OrderItemDto(
+                        oi.OrderId.Value, 
+                        oi.ProductId.Value, 
+                        oi.Quantity, 
+                        oi.Price)).ToList()
                 );
     }
 }

@@ -1,10 +1,4 @@
-﻿using BuildingBlocks.Behaviours;
-using BuildingBlocks.Messaging.MassTransit;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
-
-namespace Ordering.Application;
+﻿namespace Ordering.Application;
 
 // This class is responsible for registering application services to the dependency injection container.
 public static class DependencyInjection
@@ -19,6 +13,7 @@ public static class DependencyInjection
             cfg.AddOpenBehavior(typeof(LoggingBehaviour<,>));
         });
 
+        services.AddFeatureManagement();
         services.AddMessageBroker(configuration, Assembly.GetExecutingAssembly());
 
         return services;

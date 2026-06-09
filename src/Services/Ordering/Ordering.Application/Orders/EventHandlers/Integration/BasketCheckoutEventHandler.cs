@@ -1,8 +1,4 @@
-﻿using BuildingBlocks.Messaging.Events;
-using MassTransit;
-using Ordering.Application.Orders.Commands.CreateOrder;
-
-namespace Ordering.Application.Orders.EventHandlers.Integration;
+﻿namespace Ordering.Application.Orders.EventHandlers.Integration;
 
 public class BasketCheckoutEventHandler(ISender sender, ILogger<BasketCheckoutEventHandler> logger) : IConsumer<BasketCheckoutEvent>
 {
@@ -14,7 +10,7 @@ public class BasketCheckoutEventHandler(ISender sender, ILogger<BasketCheckoutEv
         await sender.Send(command);
     }
     
-    // Creates a full order with incoming event data. Hardcoded. I will work on this later. 
+    // Creates a full order with incoming event data. Hardcoded... I could work on this later. 
     private CreateOrderCommand MapToCreateOrderCommand(BasketCheckoutEvent message)
     {
         var addressDto = new AddressDto(
