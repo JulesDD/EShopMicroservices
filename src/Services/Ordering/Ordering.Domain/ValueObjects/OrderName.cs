@@ -10,7 +10,7 @@ public record OrderName
     public static OrderName Of(string value)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(value);
-        ArgumentOutOfRangeException.ThrowIfNotEqual(value.Length, DefaultLength);
+        //ArgumentOutOfRangeException.ThrowIfNotEqual(value.Length, DefaultLength);
         if (value.Length < DefaultLength)
             throw new DomainException($"OrderName must be at least {DefaultLength} characters long.");
 

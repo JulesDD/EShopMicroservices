@@ -41,8 +41,8 @@ public class BasketCheckoutEventHandler(ISender sender, ILogger<BasketCheckoutEv
             Status: Ordering.Domain.Enums.OrderStatus.Pending,
             OrderItems:
             [
-                new OrderItemDto(orderId, new Guid("5334c996-8457-4cf0-815c-ed2b77c4ff61"), 2, 500),
-                new OrderItemDto(orderId, new Guid("c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914"), 1, 400)
+                new OrderItemDto(orderId, new Guid("123e4567-e89b-12d3-a456-426614174000"), 2, 999.99m),
+                new OrderItemDto(orderId, new Guid("123e4567-e89b-12d3-a456-426614174001"), 1, 499.99m)
             ]);
 
         return new CreateOrderCommand(orderDto);
