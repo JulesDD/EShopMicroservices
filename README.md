@@ -42,7 +42,7 @@ Redis, SQLite, SqlServer, Marten, Entity Framework Core, CQRS, MediatR, DDD, Ver
 - SqlServer database connection and containerization
 - Using Entity Framework Core ORM and auto migrate to SqlServer when application startup
 
-# Part 5
+# Part 5 (Completed)
 # Microservices Communication and Yarp API Gateway Microservice
 - Sync inter-service gRPC Communication
 - Async Microservices Communication with RabbitMQ Message-Broker Service
